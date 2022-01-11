@@ -1,8 +1,8 @@
 n, m = [int(x) for x in input().split()]
-def right(n):
+def Right(n):
     return n * 2
 
-def left(n):
+def Left(n):
     return n - 1
 
 def calculate(n, m):
@@ -19,11 +19,11 @@ def calculate(n, m):
                 visited.add(candidate);
                 if candidate == m:
                     return step
-                l = left(candidate)
-                r = right(candidate)
+                l = Left(candidate)
+                r = Right(candidate)
                 if l > 0 and l not in visited:
                     nextLayer.add(l)
-                if r <= 10000 and r not in visited:
+                if r < 10000 and r not in visited:
                     nextLayer.add(r)
         while nextLayer:
             stepLayer.add(nextLayer.pop())
